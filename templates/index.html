@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+    <meta name="theme-color" content="#9278ff">
+
+    <title>English Kids | آموزش زبان انگلیسی</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>🌈 English Kids</h1>
+        <p>دنیای رنگارنگ یادگیری زبان انگلیسی!</p>
+    </header>
+
+    <main>
+
+        <section class="welcome">
+            <h2>سلام قهرمان کوچولو! 👋</h2>
+            <p>آماده‌ای با بازی و سرگرمی انگلیسی یاد بگیری؟</p>
+            <button onclick="startLearning()">شروع یادگیری 🚀</button>
+        </section>
+
+        <section class="lessons">
+            <h2>🎨 بخش‌های آموزشی</h2>
+
+            <div class="lesson-list">
+
+                <div class="lesson" onclick="openAlphabet()" style="cursor:pointer;">
+                    <span>🔤</span>
+                    <h3>حروف انگلیسی</h3>
+                    <p>با الفبای انگلیسی آشنا شو</p>
+                </div>
+
+                <div class="lesson" onclick="openAnimals()" style="cursor:pointer;">
+                    <span>🐶</span>
+                    <h3>حیوانات</h3>
+                    <p>اسم حیوانات رو یاد بگیر</p>
+                </div>
+
+                <div class="lesson" onclick="openFruits()" style="cursor:pointer;">
+                    <span>🍎</span>
+                    <h3>میوه‌ها</h3>
+                    <p>اسم میوه‌ها رو یاد بگیر</p>
+                </div>
+
+                <div class="lesson" onclick="openColors()" style="cursor:pointer;">
+                    <span>🎨</span>
+                    <h3>رنگ‌ها</h3>
+                    <p>رنگ‌ها رو به انگلیسی یاد بگیر</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- آموزش حروف انگلیسی -->
+        <section class="alphabet-section" id="alphabet-section" style="display:none;">
+
+            <h2>🔤 دنیای حروف انگلیسی</h2>
+            <p>روی هر حرف کلیک کن و با آن آشنا شو!</p>
+
+            <div id="alphabet-container"></div>
+
+            <div id="letter-info">
+                <h3>یک حرف انتخاب کن! 🌟</h3>
+                <p>اینجا اطلاعات حروف نمایش داده می‌شود.</p>
+            </div>
+
+        </section>
+
+        <!-- آموزش حیوانات -->
+        <section class="alphabet-section" id="animals-section" style="display:none;">
+
+            <h2>🐾 دنیای حیوانات</h2>
+            <p>روی هر حیوان کلیک کن و اسم انگلیسی آن را یاد بگیر!</p>
+
+            <div id="animals-container"></div>
+
+            <div id="animal-info">
+                <h3>یک حیوان انتخاب کن! 🐶</h3>
+            </div>
+
+        </section>
+
+        <!-- آموزش میوه‌ها -->
+        <section class="alphabet-section" id="fruits-section" style="display:none;">
+
+            <h2>🍎 دنیای میوه‌ها</h2>
+            <p>روی هر میوه کلیک کن و اسم انگلیسی آن را یاد بگیر!</p>
+
+            <div id="fruits-container"></div>
+
+            <div id="fruit-info">
+                <h3>یک میوه انتخاب کن! 🍓</h3>
+            </div>
+
+        </section>
+
+        <!-- آموزش رنگ‌ها -->
+        <section class="alphabet-section" id="colors-section" style="display:none;">
+
+            <h2>🎨 دنیای رنگ‌ها</h2>
+            <p>روی هر رنگ کلیک کن و اسم انگلیسی آن را یاد بگیر!</p>
+
+            <div id="colors-container"></div>
+
+            <div id="color-info">
+                <h3>یک رنگ انتخاب کن! 🌈</h3>
+            </div>
+
+        </section>
+
+        <!-- بازی حدس کلمه -->
+        <section id="game-section" class="game-section">
+                <h2>🎮 بازی حدس کلمه</h2>
+            <p>به تصویر نگاه کن و جواب درست رو انتخاب کن!</p>
+
+            <button onclick="startGame()">
+    🎮 شروع بازی
+</button>
+
+<div id="game-container"></div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>⭐ یادگیری با شادی، پیشرفت با بازی ⭐</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    
+<script>
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+            navigator.serviceWorker.register("/static/service-worker.js")
+                .then(function () {
+                    console.log("English Kids App فعال شد!");
+                })
+                .catch(function (error) {
+                    console.log("خطا در فعال‌سازی:", error);
+                });
+        });
+    }
+</script>
+</body>
+</html>

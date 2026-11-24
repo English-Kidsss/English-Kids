@@ -1,0 +1,900 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Tahoma, sans-serif;
+    background: #f0f6ff;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(135deg, #6c63ff, #a78bfa);
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+    border-radius: 0 0 35px 35px;
+}
+
+header h1 {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+header p {
+    font-size: 18px;
+}
+
+main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.welcome {
+    background: white;
+    padding: 35px;
+    text-align: center;
+    border-radius: 25px;
+    box-shadow: 0 5px 20px #dce4f5;
+    margin-bottom: 40px;
+}
+
+.welcome h2 {
+    color: #6c63ff;
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+.welcome p {
+    font-size: 17px;
+    margin-bottom: 25px;
+}
+
+button {
+    background: #ff9f43;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #f08020;
+    transform: scale(1.05);
+}
+
+.lessons h2 {
+    text-align: center;
+    color: #6c63ff;
+    margin-bottom: 25px;
+}
+
+.lesson-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.lesson {
+    background: white;
+    padding: 25px 15px;
+    text-align: center;
+    border-radius: 22px;
+    box-shadow: 0 4px 15px #dce4f5;
+    transition: 0.3s;
+}
+
+.lesson:hover {
+    transform: translateY(-7px);
+}
+
+.lesson span {
+    font-size: 45px;
+}
+
+.lesson h3 {
+    color: #6c63ff;
+    margin: 15px 0;
+}
+
+.lesson p {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+footer {
+    background: #6c63ff;
+    color: white;
+    text-align: center;
+    padding: 22px;
+    margin-top: 50px;
+}
+
+@media (max-width: 750px) {
+    .lesson-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 450px) {
+    .lesson-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* بخش آموزش حروف انگلیسی */
+
+.alphabet-section {
+    background: white;
+    padding: 35px 25px;
+    margin-top: 40px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 5px 20px #dce4f5;
+}
+
+.alphabet-section h2 {
+    color: #6c63ff;
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+.alphabet-section > p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+#alphabet-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.letter-card {
+    background: #eeeaff;
+    color: #6c63ff;
+    padding: 18px 5px;
+    border-radius: 15px;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 2px solid transparent;
+}
+
+.letter-card:hover {
+    background: #6c63ff;
+    color: white;
+    transform: translateY(-5px);
+}
+
+.letter-card.active {
+    background: #ffb84d;
+    color: white;
+    border-color: #ff9f43;
+}
+
+#letter-info {
+    background: #fff4df;
+    padding: 25px;
+    border-radius: 20px;
+    margin-top: 25px;
+}
+
+#letter-info h3 {
+    color: #6c63ff;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+@media (max-width: 600px) {
+    #alphabet-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+/* بخش بازی حدس کلمه */
+
+.game-section {
+    background: white;
+    padding: 35px 25px;
+    margin-top: 40px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 5px 20px #dce4f5;
+}
+
+.game-section h2 {
+    color: #6c63ff;
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+.game-section > p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+#game-container {
+    background: #f5f2ff;
+    padding: 25px;
+    border-radius: 20px;
+}
+
+.game-image {
+    font-size: 80px;
+    margin: 20px;
+}
+
+.game-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    max-width: 500px;
+    margin: 25px auto;
+}
+
+.game-option {
+    background: #6c63ff;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 15px;
+    font-size: 20px;
+}
+
+.game-option:hover {
+    background: #5148d8;
+}
+
+#game-result {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* نمایش منظم حیوانات، میوه‌ها و رنگ‌ها */
+
+#animals-container,
+#fruits-container,
+#colors-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin: 25px 0;
+}
+
+#animals-container .letter-card,
+#fruits-container .letter-card,
+#colors-container .letter-card {
+    min-height: 85px;
+    font-size: 30px;
+    border-radius: 18px;
+}
+
+#animal-info,
+#fruit-info,
+#color-info {
+    background: #fff4df;
+    padding: 25px;
+    border-radius: 20px;
+    margin-top: 25px;
+}
+
+@media (max-width: 600px) {
+    #animals-container,
+    #fruits-container,
+    #colors-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/* طراحی کارت‌های حیوانات، میوه‌ها و رنگ‌ها */
+
+.category-word-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    margin: 30px 0;
+}
+
+.category-word-grid .letter-card {
+    min-height: 230px;
+    background: white;
+    border: 2px solid #eeeaff;
+    border-radius: 22px;
+    padding: 18px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 5px 15px #dce4f5;
+    transition: 0.3s;
+}
+
+.category-word-grid .letter-card:hover {
+    transform: translateY(-7px);
+    border-color: #a78bfa;
+    background: #faf8ff;
+}
+
+.word-picture {
+    width: 140px;
+    height: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 85px;
+}
+
+.color-picture {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 3px solid #eeeeee;
+}
+
+.word-meaning {
+    font-size: 19px;
+    font-weight: bold;
+    color: #5148d8;
+}
+
+.word-name {
+    font-size: 16px;
+    color: #666;
+    direction: ltr;
+}
+
+@media (max-width: 750px) {
+    .category-word-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+/* =================================
+   طراحی جدید بخش حیوانات، میوه‌ها و رنگ‌ها
+================================= */
+
+.word-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.word-list-header h2 {
+    color: #5148d8;
+    font-size: 23px;
+}
+
+.back-button {
+    background: #eeeaff;
+    color: #5148d8;
+    padding: 10px 20px;
+    border-radius: 14px;
+    font-size: 14px;
+}
+
+.back-button:hover {
+    background: #dcd5ff;
+}
+
+.category-word-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin: 15px 0;
+}
+
+.word-card {
+    min-width: 0;
+    min-height: 205px;
+    padding: 15px 10px;
+    border: 2px solid #eeeaff;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 5px 16px #e4e0f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.word-card:hover {
+    transform: translateY(-5px);
+    border-color: #a78bfa;
+}
+
+.word-card.active {
+    background: #f3efff;
+    border: 2px solid #8b78ee;
+}
+
+.word-picture {
+    width: 100%;
+    height: 115px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 78px;
+}
+
+.color-picture {
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    border: 3px solid #eeeeee;
+}
+
+.word-meaning {
+    color: #5148d8;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.word-name {
+    color: #777;
+    font-size: 15px;
+    direction: ltr;
+}
+
+#animal-info,
+#fruit-info,
+#color-info {
+    background: #f5f2ff;
+    border: 2px solid #eeeaff;
+    border-radius: 24px;
+    padding: 25px;
+    margin-top: 20px;
+    box-shadow: 0 5px 18px #e4e0f5;
+}
+
+.selected-word {
+    text-align: center;
+    padding: 15px;
+}
+
+.selected-emoji {
+    font-size: 110px;
+    margin: 20px 0;
+}
+
+.selected-color {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin: 20px auto;
+    border: 4px solid white;
+    box-shadow: 0 4px 15px #ccc;
+}
+
+.selected-word h2 {
+    color: #5148d8;
+    margin: 12px 0;
+}
+
+.selected-word h3 {
+    color: #777;
+    margin-bottom: 18px;
+    direction: ltr;
+}
+
+.empty-word-info {
+    text-align: center;
+    padding: 25px;
+}
+
+.empty-word-info span {
+    font-size: 55px;
+}
+
+@media (max-width: 750px) {
+    .category-word-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 450px) {
+    .category-word-grid {
+        gap: 10px;
+    }
+
+    .word-card {
+        min-height: 175px;
+    }
+
+    .word-picture {
+        height: 95px;
+        font-size: 65px;
+    }
+}
+/* چیدمان دو ستونه آموزش */
+#animals-section,
+#fruits-section,
+#colors-section {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 20px;
+    align-items: start;
+}
+
+#animals-section > h2,
+#animals-section > p,
+#fruits-section > h2,
+#fruits-section > p,
+#colors-section > h2,
+#colors-section > p {
+    grid-column: 1 / -1;
+}
+
+#animals-container,
+#fruits-container,
+#colors-container {
+    min-width: 0;
+}
+
+#animal-info,
+#fruit-info,
+#color-info {
+    position: sticky;
+    top: 20px;
+    margin-top: 0;
+}
+
+@media (max-width: 800px) {
+    #animals-section,
+    #fruits-section,
+    #colors-section {
+        grid-template-columns: 1fr;
+    }
+
+    #animal-info,
+    #fruit-info,
+    #color-info {
+        position: static;
+    }
+}
+/* =================================
+   طراحی جدید بخش حیوانات، میوه‌ها و رنگ‌ها
+================================= */
+
+#animals-section,
+#fruits-section,
+#colors-section {
+    display: grid;
+    direction: ltr;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 22px;
+    align-items: start;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+#animals-section > h2,
+#animals-section > p,
+#fruits-section > h2,
+#fruits-section > p,
+#colors-section > h2,
+#colors-section > p {
+    grid-column: 1 / -1;
+    direction: rtl;
+    text-align: center;
+}
+
+#animals-container,
+#fruits-container,
+#colors-container {
+    grid-column: 1;
+    direction: rtl;
+    width: 100%;
+    min-width: 0;
+    display: block !important;
+}
+
+#animal-info,
+#fruit-info,
+#color-info {
+    grid-column: 2;
+    grid-row: 3;
+    direction: rtl;
+    width: 100%;
+    min-height: 420px;
+    margin: 0;
+    padding: 25px;
+    box-sizing: border-box;
+    position: sticky;
+    top: 20px;
+    background: #f5f0ff;
+    border: 2px solid #e6dcff;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px #ddd4f5;
+}
+
+.category-word-grid {
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 16px;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.word-card {
+    width: 100%;
+    min-width: 0;
+    min-height: 220px;
+    padding: 12px;
+    background: white;
+    border: 2px solid #eee8ff;
+    border-radius: 22px;
+    box-shadow: 0 5px 18px #e8e2f8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.word-card:hover {
+    transform: translateY(-5px);
+    border-color: #9275ed;
+    background: #faf8ff;
+}
+
+.word-picture {
+    height: 125px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 85px;
+}
+
+.word-meaning {
+    color: #6746df;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.word-name {
+    color: #687080;
+    font-size: 17px;
+    direction: ltr;
+}
+
+@media (max-width: 1050px) {
+    .category-word-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    #animals-section,
+    #fruits-section,
+    #colors-section {
+        grid-template-columns: minmax(0, 1fr) 260px;
+    }
+}
+
+@media (max-width: 700px) {
+    #animals-section,
+    #fruits-section,
+    #colors-section {
+        grid-template-columns: 1fr;
+    }
+
+    #animal-info,
+    #fruit-info,
+    #color-info {
+        grid-column: 1;
+        grid-row: auto;
+        position: static;
+    }
+
+    .category-word-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* =====================================
+   English Kids - Pastel Design
+===================================== */
+
+body {
+    background: linear-gradient(135deg, #edf2ff, #f8edff, #e8f8ff);
+    color: #45405f;
+}
+
+/* هدر اصلی */
+header {
+    background: linear-gradient(110deg, #9278ff, #c58cf5, #8bd8f5);
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 5px 20px #b7a5ed66;
+    padding: 28px 20px;
+}
+
+header h1 {
+    color: white;
+    text-shadow: 0 3px 8px #6544aa55;
+}
+
+/* محدوده اصلی */
+main {
+    max-width: 1500px;
+    margin: 25px auto;
+}
+
+/* کارت خوشامدگویی */
+.welcome {
+    background: linear-gradient(135deg, #ffffff, #f2edff);
+    border: 2px solid #e9ddff;
+    box-shadow: 0 8px 25px #b9a9e533;
+    border-radius: 28px;
+}
+
+/* عنوان‌ها */
+h2 {
+    color: #7956df;
+}
+
+/* کارت‌های انتخاب درس */
+.lesson {
+    background: linear-gradient(145deg, #ffffff, #f5f0ff);
+    border: 2px solid #ebe3ff;
+    border-radius: 25px;
+    box-shadow: 0 7px 20px #b9a9e533;
+    transition: 0.3s;
+}
+
+.lesson:hover {
+    background: #f0eaff;
+    border-color: #ad91f5;
+    transform: translateY(-7px);
+}
+
+/* بخش‌های آموزشی */
+.alphabet-section,
+.game-section {
+    background: linear-gradient(145deg, #ffffff, #f8f3ff);
+    border: 2px solid #e9ddff;
+    border-radius: 28px;
+    box-shadow: 0 8px 25px #b9a9e533;
+    padding: 35px;
+}
+
+/* حروف انگلیسی */
+.letter-card {
+    background: #eee9ff;
+    color: #7455d6;
+    border: 2px solid #e4d9ff;
+    border-radius: 18px;
+}
+
+.letter-card:hover {
+    background: #dcd0ff;
+    color: #5634bd;
+}
+
+.letter-card.active {
+    background: #cdbaff;
+    color: #4d2aab;
+    border: 3px solid #8966e8;
+}
+
+/* کارت‌های حیوانات، میوه‌ها و رنگ‌ها */
+.word-card {
+    background: white;
+    border: 2px solid #eee7ff;
+    border-radius: 25px;
+    box-shadow: 0 7px 18px #b9a9e533;
+}
+
+/* رنگ ملایم متفاوت برای هر کارت */
+.word-card:nth-child(6n+1) {
+    background: #fff8d9;
+}
+
+.word-card:nth-child(6n+2) {
+    background: #ffebdf;
+}
+
+.word-card:nth-child(6n+3) {
+    background: #e2f3ff;
+}
+
+.word-card:nth-child(6n+4) {
+    background: #e3fbe9;
+}
+
+.word-card:nth-child(6n+5) {
+    background: #f5e7ff;
+}
+
+.word-card:nth-child(6n+6) {
+    background: #ffe8f3;
+}
+
+.word-card:hover {
+    transform: translateY(-6px);
+    border-color: #a78bfa;
+    filter: brightness(0.98);
+}
+
+/* کارت انتخاب‌شده */
+.word-card.active {
+    border: 3px solid #8966e8;
+    box-shadow: 0 0 0 4px #d9caff, 0 8px 20px #a88be866;
+    transform: translateY(-5px);
+}
+
+/* پنل اطلاعات */
+#animal-info,
+#fruit-info,
+#color-info,
+#letter-info {
+    background: linear-gradient(145deg, #f5edff, #e9f2ff);
+    border: 2px solid #dfd0ff;
+    border-radius: 28px;
+    box-shadow: 0 8px 25px #b9a9e544;
+    padding: 25px;
+}
+
+/* بازی */
+#game-container {
+    background: linear-gradient(135deg, #f2edff, #e7f5ff);
+    border: 2px solid #e6dcff;
+    border-radius: 25px;
+}
+
+.game-option {
+    background: #a48af0;
+    border-radius: 18px;
+}
+
+.game-option:hover {
+    background: #8061dc;
+}
+
+/* دکمه‌ها */
+button {
+    transition: 0.25s;
+}
+
+/* دکمه بازگشت */
+.back-button {
+    background: #e9e0ff;
+    color: #6847c9;
+    border: 1px solid #d7c6ff;
+}
+
+/* نوار پایین */
+footer {
+    background: linear-gradient(110deg, #8067ed, #b47ee9);
+    border-radius: 25px 25px 0 0;
+}
+
+/* نمایش در موبایل */
+@media (max-width: 700px) {
+    main {
+        padding: 12px;
+    }
+
+    .alphabet-section,
+    .game-section {
+        padding: 20px 12px;
+    }
+}
